@@ -3,7 +3,7 @@
 /**
  *
  */
-class ProtonController {
+module.exports = class ProtonController {
   constructor(app) {
 
     if (!app.controllers) {
