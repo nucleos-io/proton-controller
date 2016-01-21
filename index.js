@@ -1,28 +1,40 @@
 'use strict'
 
 /**
- *
+ * Base Controller
+ * Inherit of this class for create controllers
  */
 module.exports = class ProtonController {
 
   constructor(app) {
-    if (!app.controllers) {
-      app.controllers = {}
-    }
-
-    app.controllers[this.name] = this
     this.app = app
-
-    if (this.isGlobal()) {
-      global[this.name] = this
-    }
+    this._bindToApp()
+    this.expose()
   }
 
-  isGlobal() {
-    return true
-  }
-
+  /**
+   * @return class name
+   */
   get name() {
     return this.constructor.name
   }
+
+  /**
+   * @description Expose this controller globally,
+   * Overwrite and return false for not expose the controller
+   *
+   * @return true | false
+   */
+  expose() {
+    global[this.name] = this
+    return true
+  }
+
+  /**
+   * @description Bind this controller to the app.controllers objects
+   */
+  _bindToApp() {
+    this.app.controllers[this.name] = this
+  }
+
 }
