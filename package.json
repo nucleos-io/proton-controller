@@ -7,6 +7,13 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Nucleos",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nucleos-io/proton-controller.git"
+  },
+  "author": "nucleos.io",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nucleos-io/proton-controller/issues"
+  }
 }
