@@ -6,8 +6,8 @@
  */
 module.exports = class ProtonController {
 
-  constructor(app) {
-    this.app = app
+  constructor(proton) {
+    this.app = proton.app
     this._bindToApp()
     this.expose()
   }
