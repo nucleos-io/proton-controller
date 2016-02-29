@@ -1,38 +1,18 @@
 'use strict'
 
+
+const Gluon = require('proton-gluon')
+
 /**
  * Base Controller
  * Inherit of this class for create controllers
  */
-module.exports = class ProtonController {
+module.exports = class ProtonController extends Gluon {
 
   constructor(proton) {
-    this.proton = proton
-    this._bindToApp()
-    this.expose()
+    super(proton)
   }
 
-  /**
-   * @return class name
-   */
-  get name() {
-    return this.constructor.name
-  }
-
-  /**
-   * @description Expose this controller globally,
-   * Overwrite and return false for not expose the controller
-   *
-   * @return true | false
-   */
-  expose() {
-    global[this.name] = this
-    return true
-  }
-
-  /**
-   * @description Bind this controller to the app.controllers objects
-   */
   _bindToApp() {
     this.proton.app.controllers[this.name] = this
   }
