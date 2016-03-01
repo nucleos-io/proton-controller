@@ -1,20 +1,23 @@
 'use strict'
 
-
-const Gluon = require('proton-gluon')
-
 /**
- * Base Controller
- * Inherit of this class for create controllers
+ * @class
+ * @classdesc this class define a proton controller
+ * @author Luis Hernandez
  */
-module.exports = class ProtonController extends Gluon {
+class ProtonController {
 
   constructor(proton) {
-    super(proton)
+    this.proton = proton
   }
 
-  _bindToApp() {
-    this.proton.app.controllers[this.name] = this
+  get name() {
+    return this.constructor.name
   }
 
+  set fileName(fileName) {
+    this.fileName = fileName
+  }
 }
+
+module.exports = ProtonController

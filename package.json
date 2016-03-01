@@ -1,6 +1,6 @@
 {
   "name": "proton-controller",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,6 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/nucleos-io/proton-controller/issues"
-  }
+  },
+  "dependencies": {}
 }
