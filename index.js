@@ -11,6 +11,10 @@ class ProtonController {
     this.proton = proton
   }
 
+  expose(controller) {
+    global[this.name] = controller
+  }
+
   get name() {
     return this.constructor.name
   }
