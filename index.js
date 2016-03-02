@@ -12,7 +12,7 @@ class ProtonController {
   }
 
   expose(controller) {
-    global[this.name] = controller
+    global[this.name] = (!controller) ? this : controller
   }
 
   get name() {
