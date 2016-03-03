@@ -2,8 +2,6 @@
 
 const BaseClass = require('proton-base-class')
 
-
-
 /**
  * @class
  * @classdesc this class define a proton controller
@@ -12,7 +10,7 @@ const BaseClass = require('proton-base-class')
 class ProtonController extends BaseClass {
 
   constructor(proton) {
-    this.proton = proton
+    super(proton)
   }
 
 }
